@@ -11,6 +11,10 @@ class ResponsesController < ApplicationController
     redirect_to question_path(@question)
   end
 
+  def edit
+    @question = Question.find(params[:question_id])
+    @response = @question.responses.find(params[:id])
+  end
 
 
   private

@@ -17,7 +17,12 @@
 
 <ul>
   <% @question.responses.each do |response| %>
-    <li><%= response.answer %></li>
+    <li>
+      <%= response.answer %>
+      <%= link_to "Edit Response",
+        edit_question_response_path(@question, response) %>
+
+    </li>
   <% end %>
 </ul>
 
