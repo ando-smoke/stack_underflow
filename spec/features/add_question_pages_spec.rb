@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'the add a question process' do
   it "adds a new question" do
-    visit root_path
+    visit questions_path
     click_on "Add New Question"
     fill_in 'Title', :with => 'Yer mom'
     fill_in 'Content', :with => 'knows no Ruby, fool!'

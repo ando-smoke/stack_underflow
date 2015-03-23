@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'questions#index'
+  get '/' => 'home#index'
 
   resources :questions do
     resources :responses, :except => [:index, :show, :new]
