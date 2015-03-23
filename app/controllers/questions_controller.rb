@@ -17,6 +17,31 @@ class QuestionsController < ApplicationController
     end
   end
 
+  def show
+    @question = Question.find(params[:id])
+  end
+
+  def edit
+    @question = Question.find(params[:id])
+  end
+
+  def update
+    @question = Question.find(params[:id])
+    if @question.update(question_params)
+      flash[:notice] = @question.title + " successfully updated!"
+      redirect_to question_path(@question)
+    else
+      redirect_to :back
+    end
+  end
+
+  def destroy
+    @question = Question.find(params[:id])
+    @question.destroy
+    flash[:notice] = "This question has been destroyed forever!"
+    redirect_to questions_path
+  end
+
   private
     def question_params
       params.require(:question).permit(:title, :content)

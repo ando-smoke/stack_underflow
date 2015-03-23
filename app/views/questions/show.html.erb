@@ -1,0 +1,11 @@
+<h3><%= @question.title %></h3>
+
+<p><%= @question.content %></p>
+
+<%= link_to 'Edit Question', edit_question_path(@question),
+  class: 'btn btn-info' %>
+
+<%= link_to 'Delete Question', question_path(@question), :data => {:method => 'delete'},
+  class: 'btn btn-danger'%>
+
+<%= link_to 'Back to Home Page', questions_path %>
