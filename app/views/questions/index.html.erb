@@ -1,0 +1,9 @@
+<h3>Questions:</h3>
+
+<ul>
+  <% @questions.each do |question| %>
+    <li><%= question.title %></li>
+  <% end %>
+</ul>
+
+<%= link_to "Add New Question", new_question_path %>
