@@ -1,0 +1,17 @@
+<h3> <%= @user.name %>'s Profile </h3>
+
+
+<p><%= link_to "View All Questions", questions_path %></p>
+
+<% if @user.questions.any? %>
+  <h5> Your Questions </h5>
+  <ul>
+    <% @user.questions.each do |quest| %>
+      <li>
+        <%= link_to quest.title, question_path(quest) %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p> You haven't asked any of your own! </p>
+<% end %>

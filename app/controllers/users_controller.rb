@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  def new
 
+  def new
   end
 
   def create
@@ -12,6 +12,10 @@ class UsersController < ApplicationController
       flash[:alert] = "User account creation denied! Try again."
       redirect_to :back
     end
+  end
+
+  def show
+    @user = current_user
   end
 
   private
