@@ -1,6 +1,8 @@
 <h3><%= @question.title %></h3>
 
 <p><%= @question.content %></p>
+<p>submitted by: <%= @question.user.name %></p>
+
 
 
 <%= link_to 'Edit Question', edit_question_path(@question),
@@ -17,7 +19,10 @@
 
 <ul>
   <% @question.responses.each do |response| %>
-    <li><%= response.answer %></li>
+    <li>
+      <%= response.user.name %> suggests:
+      <%= response.answer %>
+    </li>
   <% end %>
 </ul>
 

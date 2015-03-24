@@ -20,7 +20,7 @@ class ResponsesController < ApplicationController
 
   private
     def response_params
-      params.require(:response).permit(:answer)
+      params.require(:response).permit(:answer, :user_id)
     end
 
 

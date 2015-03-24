@@ -2,6 +2,8 @@
 
 
 <p><%= link_to "View All Questions", questions_path %></p>
+<p><%= link_to "Add Question?", new_question_path %></p>
+
 
 <% if @user.questions.any? %>
   <h5> Your Questions </h5>
