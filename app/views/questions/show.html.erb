@@ -22,6 +22,12 @@
     <li>
       <%= response.user.name %> suggests:
       <%= response.answer %>
+      <%= link_to "Edit Response",
+        edit_question_response_path(@question, response) %>
+      <%= link_to "Delete Response",
+        question_response_path(@question, response),
+          :data => { :confirm => 'Are you ready for this??',
+                     :method => 'delete' } %>
     </li>
   <% end %>
 </ul>
