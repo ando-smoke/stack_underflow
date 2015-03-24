@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   validates :email, presence: true
   validates :password, confirmation: true
   before_save :encrypt_password
+  has_many :questions
+  has_many :responses
 
   def encrypt_password
     unless password.nil?
