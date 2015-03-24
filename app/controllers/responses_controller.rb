@@ -9,6 +9,7 @@ class ResponsesController < ApplicationController
     @question = Question.find(params[:question_id])
     @response = @question.responses.new(response_params)
     if @response.save
+      UserMailer.response_notification(@question).deliver
       flash[:notice] = "Thank you for your answer."
       redirect_to question_path(@question)
     else
