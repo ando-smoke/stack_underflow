@@ -1,14 +1,19 @@
 class ResponsesController < ApplicationController
 
+  def new
+    @question = Question.find(params[:question_id])
+    @response = @question.responses.new
+  end
+
   def create
     @question = Question.find(params[:question_id])
     @response = @question.responses.new(response_params)
     if @response.save
       flash[:notice] = "Thank you for your answer."
+      redirect_to question_path(@question)
     else
-      flash[:alert] = "Your answer did not submit. Try again."
+      render :new
     end
-    redirect_to question_path(@question)
   end
 
 

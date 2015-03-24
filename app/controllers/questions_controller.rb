@@ -19,7 +19,6 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
-    @response = @question.responses.new
   end
 
   def edit

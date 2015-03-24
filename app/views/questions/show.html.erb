@@ -2,6 +2,7 @@
 
 <p><%= @question.content %></p>
 
+
 <%= link_to 'Edit Question', edit_question_path(@question),
   class: 'btn btn-info' %>
 
@@ -9,9 +10,8 @@
   class: 'btn btn-danger' %>
 
 <hr />
-  <%= render 'responses/form' %>
+<%= link_to 'Add Response?', new_question_response_path(@question) %>
 <hr />
-
 
 <h4>Answers:</h4>
 

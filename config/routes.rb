@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   resources :users, :only => [:new, :create, :show]
 
   resources :questions do
-    resources :responses, :except => [:index, :show, :new]
+    resources :responses, :except => [:index, :show]
   end
 end
