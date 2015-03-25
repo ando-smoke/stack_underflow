@@ -46,6 +46,12 @@ gem install bundler
 bundle
 ```
 
+Also, if you want to run the included RSpec test, enter the following
+statements into the command line:
+```ruby
+rails generate rspec:install
+```
+
 Before the application can run, the user must have a version of
 a Postgres database installed on their system, and running in an active
 session. At the time of creation of this application, Postgres 9.4 was
@@ -112,7 +118,7 @@ localhost:3000/
 The initial home page displays a welcome page along with buttons
 for creating a new user (i.e. "sign up") and signing in with a
 preexisting user name and password. Upon successful log in,
-the user is then taken to their profile page consisting of all
+the user is taken to their profile page consisting of all
 previously asked questions and a button for adding new questions.
 All displayed questions can be clicked upon for detail on the
 question as well as a list of all user responses. On this question
@@ -124,12 +130,12 @@ gem. Finally, the current user can click on the *Sign Out* button
 in the upper right corner of the navbar at any time to log out of
 the app.
 
-Of note, on the question detail page, all displayed responses
+Of additional note on the question detail page, all displayed responses
 can be edited or deleted at any time, irrespective of whether
-or not the current user and response (or question) originator
+or not the current user and response/question originator
 are the same. Future revisions to the app may entail either removing
 this functionality or conditionally restricting edit/delete privileges
-to the response originator if they are also the current user.
+to the response/question originator if they are also the current user.
 
 Known Bugs
 ----------
