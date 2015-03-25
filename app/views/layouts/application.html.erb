@@ -7,32 +7,30 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#">Stack Underflow</a>
-      </div>
-      <div id="navbar">
-        <ul class="nav navbar-nav">
-          <li>
-            <%= link_to "All Questions", questions_path %>
-          </li>
-          <% unless current_user.nil? %>
+  <% unless current_user.nil? %>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Stack Underflow</a>
+        </div>
+        <div id="navbar">
+          <ul class="nav navbar-nav">
+            <li>
+              <%= link_to "All Questions", questions_path %>
+            </li>
             <li>
               <%= link_to "Profile Page", user_path(current_user) %>
             </li>
-          <% end %>
-        </ul>
-        <% unless current_user.nil? %>
+          </ul>
           <p class="navbar-text navbar-right">
             Signed in as <em><%= current_user.name %></em>
             <%= link_to "Sign Out", log_out_path,
               class: "btn btn-default btn-xs" %>
           </p>
-        <% end %>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
+  <% end %>
 
   <div class='container'>
     <%= flash[:alert] %>
