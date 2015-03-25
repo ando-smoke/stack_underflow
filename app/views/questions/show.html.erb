@@ -12,7 +12,8 @@
   class: 'btn btn-danger' %>
 
 <hr />
-<%= link_to 'Add Response?', new_question_response_path(@question) %>
+<%= link_to 'Add Response?', new_question_response_path(@question),
+  class: 'btn btn-primary' %>
 <hr />
 
 <h4>Answers:</h4>
@@ -23,11 +24,13 @@
       <%= response.user.name %> suggests:
       <%= response.answer %>
       <%= link_to "Edit Response",
-        edit_question_response_path(@question, response) %>
+        edit_question_response_path(@question, response),
+        class: 'btn btn-info btn-xs' %>
       <%= link_to "Delete Response",
         question_response_path(@question, response),
           :data => { :confirm => 'Are you ready for this??',
-                     :method => 'delete' } %>
+                     :method => 'delete' },
+          class: 'btn btn-danger btn-xs' %>
     </li>
   <% end %>
 </ul>
