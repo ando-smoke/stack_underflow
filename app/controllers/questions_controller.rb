@@ -10,10 +10,23 @@ class QuestionsController < ApplicationController
   def create
     @question = current_user.questions.new(question_params)
     if @question.save
-      flash[:notice] = @question.title + " successfully created!"
-      redirect_to questions_path
+      respond_to do |format|
+        format.html do
+          flash[:notice] = @question.title + " successfully created!"
+          redirect_to questions_path
+        end
+
+        format.js do
+          flash.now[:notice] = @question.title + " successfully created!"
+        end
+      end
     else
-      render :new
+      respond_to do |format|
+        format.html { render :new }
+        format.js do
+          flash.now[:alert] = "Error in new question entry. Try again."
+        end
+      end
     end
   end
 

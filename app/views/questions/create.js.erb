@@ -1,0 +1,4 @@
+$('#new_question').remove();
+$('#new_question_link').show();
+$('#all_questions').append('<%= j render @question %>');
+$('#flash').html('<%= j render "layouts/notices" %>');
